@@ -1,0 +1,366 @@
+<!DOCTYPE html> 
+<html>
+
+	<head> 
+		<meta charset = "utf-8"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.js" type="text/javascript"></script>
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+			<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+			<meta name="description" content="">
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title> 
+		AIR HOST
+		</title> 
+		
+		<style  type="text/css"> 
+		.g-block-1 {
+			width: 50%;
+			float: left;
+		}
+		.g-block-11 {
+			width: 50%;
+			float: left;
+		}
+		.g-block-12 {
+			width: 50%;
+			float: right;
+		}
+		.g-block-21 {
+			width: 50%;
+			float: left;
+		}
+		.g-block-22 {
+			width: 50%;
+			float: right;
+		}
+		.g-block {
+			width: 100%;
+			height: 100px;
+			background-color: cyan;
+			border-radius: 100px 100px;
+			border-bottom-right-radius: 100px 100px;
+			
+		}
+
+		.g-block-2 {
+			width: 50%;
+			float: right;
+		}
+		.block1 {
+			width: 400px;
+			height: 100px;
+			background-color: yellow;
+			border-top-left-radius: 100px 100px;
+			border-bottom-right-radius: 100px 100px;
+		}
+		.block2 {
+			width: 400px;
+			height: 100px;
+			background-color: cyan;
+			border-top-left-radius: 100px 100px;
+			border-bottom-right-radius: 100px 100px;
+		}
+		.block3 {
+			width: 500px;
+			height: 250px;
+			border-radius: 100px;
+			background-color: DeepSkyBlue;
+		}
+		body{
+                background-color: #f5f5f5;
+                margin: 0;
+                padding: 0;
+                font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+            }
+
+            .page {
+                margin: 20px;
+            }
+			
+            .dark-area {
+                background-color: #666;
+                padding: 40px;
+                margin: 0 -40px 20px -40px;
+                clear: both;
+            }
+
+            .clearfix:before,.clearfix:after {content: " "; display: table;}
+            .clearfix:after {clear: both;}
+            .clearfix {*zoom: 1;}	
+			.font1 {
+				font-family: Arial, Helvetica, sans-serif;
+			}
+			#customers {
+			  font-family: Arial, Helvetica, sans-serif;
+			  border-collapse: collapse;
+			  width: 100%;
+			}
+
+			#customers td, #customers th {
+			  border: 1px solid #ddd;
+			  padding: 8px;
+			}
+
+			#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+			#customers tr:hover {background-color: #ddd;}
+
+			#customers th {
+			  padding-top: 12px;
+			  padding-bottom: 12px;
+			  text-align: left;
+			  background-color: #4CAF50;
+			  color: white;
+			}
+			.xanh {
+			  background-color: lime;    
+			  width: 100px;
+			  height: 40px;
+			  border-radius: 25px;
+			  text-align: center;
+			  font-family: Arial, Helvetica, sans-serif;
+			  font-size: 20px;
+			  line-height: 40px; 
+			  
+			}
+			.vang {
+			  background-color: yellow;    
+			  width: 100px;
+			  height: 40px;
+			  border-radius: 25px;
+			  text-align: center;
+			  font-family: Arial, Helvetica, sans-serif;
+			  font-size: 20px;
+			  line-height: 40px; 
+			}
+			.cam {
+			  background-color: orange;    
+			  width: 100px;
+			  height: 40px;
+			  border-radius: 25px;
+			  text-align: center;
+			  font-family: Arial, Helvetica, sans-serif;
+			  font-size: 20px;
+			  line-height: 40px; 
+			}
+			.do {
+			  background-color: red;    
+			  width: 100px;
+			  height: 40px;
+			  border-radius: 25px;
+			  text-align: center;
+			  font-family: Arial, Helvetica, sans-serif;
+			  font-size: 20px;
+			  line-height: 40px; 
+			}
+			.tim {
+			  background-color: purple;    
+			  width: 100px;
+			  height: 40px;
+			  border-radius: 25px;
+			  text-align: center;
+			  font-family: Arial, Helvetica, sans-serif;
+			  font-size: 20px;
+			  line-height: 40px; 
+			}
+			.nau {
+			  background-color: brown;    
+			  width: 100px;
+			  height: 40px;
+			  border-radius: 25px;
+			  text-align: center;
+			  font-family: Arial, Helvetica, sans-serif;
+			  font-size: 20px;
+			  line-height: 40px; 
+			}
+		</style> 
+		<link rel="stylesheet" href="css/circle.css">
+	</head> 
+	
+	<body>
+		<div class = "page">
+			<div class = "g-block">
+			<center> 
+				<h1> AIR HOST </h1> 
+				<h2> Web Design By 3CsLab </h2> 
+			</center>
+			</div> 
+			<div> 
+				<center> 
+				<h2> Bảng quan sát trang thái </h2> 
+				</center> 
+			</div> 
+			<div class = "g-block-1"> 
+				<div class = "g-block-11">
+					<!--Thiết kế bảng phí bên trái-->  
+					<h3 class = "font1"> Nhiệt Độ </h3> 
+					<div class="c100 p50 big orange" id = "dnhietdo">
+						<span id = "snhietdo">0°C </span>
+						<div class="slice">
+							<div class="bar"></div>
+							<div class="fill"></div>
+						</div>
+					</div>
+				</div> 
+				<div class = "g-block-12">
+					<!--Thiết kế bảng phí bên trái-->  
+					<h3> Độ Ẩm </h3> 
+					<div class="c100 p50 big" id = "ddoam">
+						<span id = "sdoam">0%</span>
+						<div class="slice">
+							<div class="bar"></div>
+							<div class="fill"></div>
+						</div>
+					</div>
+				</div> 
+			</div> 
+			<div class = "g-block-2"> 
+				<div class = "g-block-21">
+				
+					<!--Thiết kế bảng phí bên trái-->  
+					<h3> Cường Độ UV </h3> 
+					<div class="c100 p50 big red" id = "duv">
+						<span id = "suv">0</span>
+						<div class="slice">
+							<div class="bar"></div>
+							<div class="fill"></div>
+						</div>
+					</div>
+						
+				</div> 
+				<div class = "g-block-22">
+					<!--Thiết kế bảng phí bên trái-->  
+					<h3> AQI </h3> 
+					<div class="c100 p50 big brown" id = "daqi">
+						<span id = "saqi">0</span>
+						<div class="slice">
+							<div class="bar"></div>
+							<div class="fill"></div>
+						</div>
+					</div>
+				</div> 
+			</div> 
+		</div> 
+		<!--Thiết kế bảng so sánh giá trị --> 
+		<div> 
+			<center> 
+			    <h1> BẢNG QUY ĐỔI GIÁ TRỊ AQI </h1>  
+			</center> 	
+		</div>
+		<div>
+			<table id="customers">
+			  <tr>
+				<th>Giá Trị AQI</th>
+				<th>Đánh Giá</th>
+				<th>Ảnh Hưởng Tới Sức Khỏe</th>
+				<th>Màu Sắc</th> 
+			  </tr>
+			  <tr>
+				<td>0-50</td>
+				<td>TỐT</td>
+				<td>Chất lượng không khí tốt, không ảnh hưởng tới sức khỏe.</td>
+				<td>
+					<div class="xanh">XANH</div>
+				</td> 
+			  </tr>
+			  
+			  <tr>
+				<td>51-100</td>
+				<td>TRUNG BÌNH</td>
+				<td>Chất lượng không khí ở mức chấp nhận được. Tuy nhiên, một số ít người nhạy cảm với ô nhiễm không khí có thể chịu những tác động nhất định tới sức khỏe.</td>
+				<td>
+					<div class="vang">VÀNG</div>
+				</td> 
+			  </tr>
+			  
+			  <tr>
+				<td>101-150</td>
+				<td>KÉM</td>
+				<td>Những người nhạy cảm có thể gặp phải các vấn đề về sức khỏe. Những người bình thường ít có khả năng bị ảnh hưởng.</td>
+				<td>
+					<div class="cam">DA CAM</div>
+				</td> 
+			  </tr>
+			  
+			  <tr>
+				<td>151-200</td>
+				<td>XẤU</td>
+				<td>Những người bình thường bắt đầu có các ảnh hưởng tới sức khỏe. Những người nhạy cảm có thể gặp những vấn đề sức khỏe nghiêm trọng hơn.</td>
+				<td>
+					<div class="do">ĐỎ</div>
+				</td> 
+			  </tr>
+			  
+			  <tr>
+				<td>201-300</td>
+				<td>RẤT XẤU</td>
+				<td>Cảnh báo hưởng tới sức khỏe: mọi người có thể bị ảnh hưởng tới sức khỏe nhiều hơn.</td>
+				<td>
+					<div class="tim">TÍM</div>
+				</td> 
+			  </tr>
+			  <tr>
+				<td>TỪ 301</td>
+				<td>NGUY HẠI</td>
+				<td>Cảnh báo khẩn cấp về sức khỏe: Mọi người có thể bị ảnh hưởng nghiêm trọng tới sức khỏe.</td>
+				<td>
+					<div class="nau">NÂU</div>
+				</td> 
+			  </tr>
+
+			</table>
+		</div> 
+	</body> 
+	
+	<script type = "text/javascript">
+	
+		var client = new Paho.MQTT.Client("mqtt.ngoinhaiot.com",2222,"web_" + parseInt(Math.random() * 100, 10));  
+		client.onConnectionLost = onConnectionLost;  
+		client.onMessageArrived = onMessageArrived;
+		var options = { useSSL: false,userName: "tranthanh1602",password: "tranthanh1602",onSuccess: onConnect , onFailure: doFail }  
+		client.connect(options); 
+		function onConnect()
+		{
+			console.log("Connect Server mqtt.ngoinhaiot.com");
+			client.subscribe("tranthanh1602/pub");	 // nhận dữ liệu		
+		}  
+		
+		function doFail(e) {
+		   console.log(e);
+		}
+	 
+		function onConnectionLost(responseObject) 
+		{
+			if (responseObject.errorCode !== 0) 
+			{
+			console.log("error");
+				console.log("onConnectionLost:" + responseObject.errorMessage);
+			}
+		} 
+		
+		function onMessageArrived(message) 
+		{
+			console.log("Data Server:" + message.payloadString);
+			var DataServer = message.payloadString;	
+			var DataJson = JSON.parse(DataServer);
+			// Sửa bảng nhiệt độ 
+			document.getElementById("dnhietdo").className = "c100 p" + DataJson.nhietdo + " big orange";
+			document.getElementById("snhietdo").innerHTML = DataJson.nhietdo + "%";
+			
+			// Sửa bảng dộ ẩm
+			document.getElementById("ddoam").className = "c100 p" + DataJson.doam + " big orange";
+			document.getElementById("sdoam").innerHTML = DataJson.doam + "%";
+			
+			// Sửa bảng chỉ số uv 
+			document.getElementById("duv").className = "c100 p" + DataJson.doam + " big orange";
+			document.getElementById("suv").innerHTML = DataJson.doam + "%";
+			
+			// Sửa bảng chỉ số aqi
+			document.getElementById("daqi").className = "c100 p" + DataJson.doam + " big orange";
+			document.getElementById("saqi").innerHTML = DataJson.doam + "%";
+		}
+		
+	</script> 
+
+</html> 
