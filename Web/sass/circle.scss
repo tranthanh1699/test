@@ -218,61 +218,7 @@ $primary-color-red-dark: #c1a9c5;
 		}
 
 	}
-
-	// green skin
-	&.green{
-
-		.bar, .fill { border-color: $primary-color-green !important;}
-
-		&:hover{
-			> span { color: $primary-color-green;}
-		}
-
-	}
 	
-	
-
-		&.green.dark{
-
-			.bar, .fill { border-color: $primary-color-green-dark !important;}
-
-			&:hover{
-				> span { color: $primary-color-green-dark;}
-			}
-
-		}
-
-		&.green.dark{
-
-			.bar, .fill { border-color: $primary-color-red-dark !important;}
-
-			&:hover{
-				> span { color: $primary-color-red-dark;}
-			}
-
-		}
-
-	// orange skin
-	&.orange{
-
-		.bar, .fill { border-color: $primary-color-orange !important;}
-
-		&:hover{
-			> span { color: $primary-color-orange;}
-		}
-
-	}
-
-		&.orange.dark{
-
-			.bar, .fill { border-color: $primary-color-orange-dark !important;}
-
-			&:hover{
-				> span { color: $primary-color-orange-dark;}
-			}
-
-		}
-	// Màu cảnh báo cho AQI
 	&.red{
 
 		.bar, .fill { border-color: $primary-color-red !important;}
@@ -292,6 +238,7 @@ $primary-color-red-dark: #c1a9c5;
 		}
 
 	}
+	
 	&.violet{
 
 		.bar, .fill { border-color: $primary-color-violet !important;}
@@ -300,7 +247,9 @@ $primary-color-red-dark: #c1a9c5;
 			> span { color: $primary-color-violet;}
 		}
 
+
 	}
+	
 	&.brown{
 
 		.bar, .fill { border-color: $primary-color-brown !important;}
@@ -312,5 +261,27 @@ $primary-color-red-dark: #c1a9c5;
 	}
 	
 
+	// green skin
+	&.green{
 
+		.bar, .fill { border-color: $primary-color-green !important;}
+
+		&:hover{
+			> span { color: $primary-color-green;}
+		}
+
+	}
+	
+	
+	// orange skin
+	&.orange{
+
+		.bar, .fill { border-color: $primary-color-orange !important;}
+
+		&:hover{
+			> span { color: $primary-color-orange;}
+		}
+
+	}
+	
 }

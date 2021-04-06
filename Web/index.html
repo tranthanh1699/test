@@ -35,14 +35,16 @@
 			float: right;
 		}
 		.g-block {
-			width: 100%;
-			height: 100px;
-			background-color: cyan;
-			border-radius: 100px 100px;
-			border-bottom-right-radius: 100px 100px;
-			
+			width: 1296px;
+			height: 160PX;
+			background-color: white;
+			background-image: url('theme.jpg'); 
+			background-size: contain;
 		}
-
+		img{
+			max-width: 100%; 
+			max-height: 100%; 
+		}
 		.g-block-2 {
 			width: 50%;
 			float: right;
@@ -180,12 +182,11 @@
 	
 	<body>
 		<div class = "page">
-			<div class = "g-block">
-			<center> 
-				<h1> AIR HOST </h1> 
-				<h2> Web Design By 3CsLab </h2> 
+			<center>
+				<div class = "g-block">
+				
+				</div>
 			</center>
-			</div> 
 			<div> 
 				<center> 
 				<h2> Bảng quan sát trang thái </h2> 
@@ -220,7 +221,7 @@
 				
 					<!--Thiết kế bảng phí bên trái-->  
 					<h3> Cường Độ UV </h3> 
-					<div class="c100 p50 big red" id = "duv">
+					<div class="c100 p100 big red" id = "duv">
 						<span id = "suv">0</span>
 						<div class="slice">
 							<div class="bar"></div>
@@ -232,16 +233,12 @@
 				<div class = "g-block-22">
 					<!--Thiết kế bảng phí bên trái-->  
 					<h3> AQI </h3> 
-					<div class="c100 p50 big brown" id = "daqi">
+					<div class="c100 p100 big violet" id = "daqi">
 						<span id = "saqi">0</span>
 						<div class="slice">
 							<div class="bar"></div>
 							<div class="fill"></div>
-						</div>
-					</div>
-				</div> 
-			</div> 
-		</div> 
+						</div>div> 
 		<!--Thiết kế bảng so sánh giá trị --> 
 		<div> 
 			<center> 
@@ -249,16 +246,30 @@
 			</center> 	
 		</div>
 		<div>
-			<table id="customers">
+			<
+					</div>
+				</div> 
+			</div> 
+		</table id="customers">
 			  <tr>
-				<th>Giá Trị AQI</th>
-				<th>Đánh Giá</th>
-				<th>Ảnh Hưởng Tới Sức Khỏe</th>
-				<th>Màu Sắc</th> 
+				<th>
+					<center> Giá Trị AQI </center> 
+				</th>
+				<th>
+					<center> Đánh Giá </center> 
+				</th>
+				<th>
+					<center> Ảnh Hưởng Tới Sức Khỏe </center> 
+				</th>
+				<th>
+					<center> Màu Sắc </center> 
+				</th> 
 			  </tr>
 			  <tr>
 				<td>0-50</td>
-				<td>TỐT</td>
+				<td>
+					<center> TỐT </center> 
+				</td>
 				<td>Chất lượng không khí tốt, không ảnh hưởng tới sức khỏe.</td>
 				<td>
 					<div class="xanh">XANH</div>
@@ -267,7 +278,9 @@
 			  
 			  <tr>
 				<td>51-100</td>
-				<td>TRUNG BÌNH</td>
+				<td>
+					<center> TRUNG BÌNH </center> 
+				</td>
 				<td>Chất lượng không khí ở mức chấp nhận được. Tuy nhiên, một số ít người nhạy cảm với ô nhiễm không khí có thể chịu những tác động nhất định tới sức khỏe.</td>
 				<td>
 					<div class="vang">VÀNG</div>
@@ -276,7 +289,9 @@
 			  
 			  <tr>
 				<td>101-150</td>
-				<td>KÉM</td>
+				<td>
+					<center> KÉM </center> 
+				</td>
 				<td>Những người nhạy cảm có thể gặp phải các vấn đề về sức khỏe. Những người bình thường ít có khả năng bị ảnh hưởng.</td>
 				<td>
 					<div class="cam">DA CAM</div>
@@ -285,7 +300,9 @@
 			  
 			  <tr>
 				<td>151-200</td>
-				<td>XẤU</td>
+				<td>
+					<center> XẤU </center> 
+				</td>
 				<td>Những người bình thường bắt đầu có các ảnh hưởng tới sức khỏe. Những người nhạy cảm có thể gặp những vấn đề sức khỏe nghiêm trọng hơn.</td>
 				<td>
 					<div class="do">ĐỎ</div>
@@ -294,7 +311,9 @@
 			  
 			  <tr>
 				<td>201-300</td>
-				<td>RẤT XẤU</td>
+				<td>
+					<center> RẤT XẤU </center> 
+				</td>
 				<td>Cảnh báo hưởng tới sức khỏe: mọi người có thể bị ảnh hưởng tới sức khỏe nhiều hơn.</td>
 				<td>
 					<div class="tim">TÍM</div>
@@ -302,7 +321,9 @@
 			  </tr>
 			  <tr>
 				<td>TỪ 301</td>
-				<td>NGUY HẠI</td>
+				<td>
+					<center> NGUY HẠI </center> 
+				</td>
 				<td>Cảnh báo khẩn cấp về sức khỏe: Mọi người có thể bị ảnh hưởng nghiêm trọng tới sức khỏe.</td>
 				<td>
 					<div class="nau">NÂU</div>
@@ -334,7 +355,7 @@
 		{
 			if (responseObject.errorCode !== 0) 
 			{
-			console.log("error");
+				console.log("error");
 				console.log("onConnectionLost:" + responseObject.errorMessage);
 			}
 		} 
@@ -349,16 +370,53 @@
 			document.getElementById("snhietdo").innerHTML = DataJson.nhietdo + "%";
 			
 			// Sửa bảng dộ ẩm
-			document.getElementById("ddoam").className = "c100 p" + DataJson.doam + " big orange";
+			document.getElementById("ddoam").className = "c100 p" + DataJson.doam + " big";
 			document.getElementById("sdoam").innerHTML = DataJson.doam + "%";
 			
 			// Sửa bảng chỉ số uv 
-			document.getElementById("duv").className = "c100 p" + DataJson.doam + " big orange";
-			document.getElementById("suv").innerHTML = DataJson.doam + "%";
+			document.getElementById("duv").className = "c100 p" + DataJson.uv + " big red";
+			document.getElementById("suv").innerHTML = DataJson.uv + "%";
 			
 			// Sửa bảng chỉ số aqi
-			document.getElementById("daqi").className = "c100 p" + DataJson.doam + " big orange";
-			document.getElementById("saqi").innerHTML = DataJson.doam + "%";
+			
+			
+			var aqi = parseInt(DataJson.aqi);
+			// Màu Xanh 
+			if(aqi >= 0 && aqi <= 50)
+			{
+				document.getElementById("saqi").innerHTML = DataJson.aqi;
+				document.getElementById("daqi").className = "c100 p100 big green";
+			}
+			// Màu Vàng 
+			else if(aqi >= 51 && aqi <= 100)
+			{
+				document.getElementById("saqi").innerHTML = DataJson.aqi;
+				document.getElementById("daqi").className = "c100 p100 big yellow";
+			}
+			//Màu cam
+			else if(aqi >= 101 && aqi <= 150)
+			{
+				document.getElementById("saqi").innerHTML = DataJson.aqi;
+				document.getElementById("daqi").className = "c100 p100 big orange";
+			}
+			//Màu đỏ 
+			else if(aqi >= 151 && aqi <= 200)
+			{
+				document.getElementById("saqi").innerHTML = DataJson.aqi;
+				document.getElementById("daqi").className = "c100 p100 big red";
+			}
+			//Màu tím 
+			else if(aqi >= 201 && aqi <= 300)
+			{
+				document.getElementById("saqi").innerHTML = DataJson.aqi;
+				document.getElementById("daqi").className = "c100 p100 big violet";
+			}
+			// Màu nâu 
+			else
+			{
+				document.getElementById("saqi").innerHTML = DataJson.aqi;
+				document.getElementById("daqi").className = "c100 p100 big brown";
+			}	
 		}
 		
 	</script> 
